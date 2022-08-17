@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh | Info Cards</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/icone/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div id="load" class="load"></div>
+    </div>
+
+    <header class="header">   
+        <img src="assets/img/Yu-Gi-Oh.jpg"> 
+        <form class="form">
+            <section class="list-name-content">
+                <label>List of Cards:</label>
+                <section class="list-select-name">
+                    <select name="name"
+                     id="listOfNames"
+                     class="select-list-name"
+                     onchange="listNames()">
+                    </select>
+                </section>
+            </section>
+        </form>        
+    </header>
+    
+    <main class="container">
+        <article class="main-content">
+                <section class="info-data">
+                    <div>Name: <span id="cardName"></span></div>
+                    <div>Type: <span id="type"></span></div>
+                    <div>ID: <span id="id"></span></div>
+                    <div>Level: <span id="level"></dspaniv></div>
+                    <div>Card Set: <span id="cardSet"></span></div>
+                    <div>Race: <span id="race"></span></div>
+                    <div>Position: <span id="position"></span></div>
+                    <div>Total of Cards: <span id="totalcards"></span></div>
+                </section>
+
+                    <input id="input" class="input" type="text" placeholder="Search your card: Dark Magician">
+
+                    <button onclick="btnSubmit()" class="btn-submit"
+                    >Click</button>
+               
+                <section class="buttons">
+                    <button id="btnPrev" class="btn" onclick="btnPrev()">Back</button>
+
+                    <button id="btnNext" class="btn" onclick="btnNext()">Next</button>
+                </section>
+        </article>
+
+        <figure class="img_preview">
+                <img id="img_preview">
+        </figure>
+        
+        <footer class="footer">
+            <div class="footer">
+                <p>© 2022 willcode</p>
+                <p>Powered by <a href="https://www.linkedin.com/in/renovatt/" target="_blank">renovatt</a></p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/vanila.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll("#img_preview"), {
+            max: 25,
+        })
+    </script>
+</body>
+</html>

@@ -14,49 +14,58 @@
     </div>
 
     <header class="header">   
-        <img src="assets/img/Yu-Gi-Oh.jpg"> 
-        <form class="form">
-            <section class="list-name-content">
-                <label>List of Cards:</label>
-                <section class="list-select-name">
-                    <select name="name"
-                     id="listOfNames"
-                     class="select-list-name"
-                     onchange="listNames()">
-                    </select>
-                </section>
-            </section>
-        </form>        
+        
+        <img src="assets/img/Yu-Gi-Oh-logo.png">
+        
+        <section class="list-name-content" onclick="openList()">
+            <span>List of Cards</span><img src="assets/img/arrow.png">
+        </section>
+
+        <section class="easter-egg-content">
+            <span onclick="easterList()"><img src="assets/img/easter-egg.png"></span>
+        </section>
+        
+        <!--------------Listas normalmente ocultas------------------->
+        <section class="list-select-name" id="list-select-name">
+            <ul id="list-of-names" class="list-name"></ul>
+        </section>
+
+        <section class="list-beast-name" id="list-select-divine">
+            <ul id="divine-beast" class="list-beast"></ul>
+        </section>
+        <!----------------------------------------------------------->
+        
     </header>
     
-    <main class="container">
+    <main class="container" onclick="closeLists()">
+
+        <figure class="img-preview" id="preview">
+            <img id="img-preview">
+        </figure>
+
         <article class="main-content">
                 <section class="info-data">
-                    <div>Name: <span id="cardName"></span></div>
+                    <div>Name: <span id="card-name"></span></div>
                     <div>Type: <span id="type"></span></div>
                     <div>ID: <span id="id"></span></div>
                     <div>Level: <span id="level"></dspaniv></div>
-                    <div>Card Set: <span id="cardSet"></span></div>
+                    <div>Card Set: <span id="card-set"></span></div>
                     <div>Race: <span id="race"></span></div>
                     <div>Position: <span id="position"></span></div>
-                    <div>Total of Cards: <span id="totalcards"></span></div>
+                    <div>Total of Cards: <span id="total-cards"></span></div>
                 </section>
 
-                    <input id="input" class="input" type="text" placeholder="Search your card: Dark Magician">
-
-                    <button onclick="btnSubmit()" class="btn-submit"
-                    >Click</button>
+                    <section>
+                        <input id="input" class="input" type="search" placeholder="Search your card: Dark Magician" spellcheck="false">
+                        <button onclick="btnSubmit()" class="btn-submit"
+                        >Click</button>
+                    </section>
                
-                <section class="buttons">
-                    <button id="btnPrev" class="btn" onclick="btnPrev()">Back</button>
-
-                    <button id="btnNext" class="btn" onclick="btnNext()">Next</button>
-                </section>
+                    <section class="buttons">
+                        <button class="btn" onclick="btnPrev()">Back</button>
+                        <button class="btn" onclick="btnNext()">Next</button>
+                    </section>
         </article>
-
-        <figure class="img_preview">
-                <img id="img_preview">
-        </figure>
         
         <footer class="footer">
             <div class="footer">
@@ -69,7 +78,7 @@
     <script src="assets/javascript/main.js"></script>
     <script src="assets/javascript/vanila.js"></script>
     <script>
-        VanillaTilt.init(document.querySelectorAll("#img_preview"), {
+        VanillaTilt.init(document.querySelectorAll("#img-preview"), {
             max: 25,
         })
     </script>

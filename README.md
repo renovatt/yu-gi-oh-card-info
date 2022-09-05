@@ -4,7 +4,7 @@
 
 https://renovatt.github.io/yu-gi-oh-card-info/
 
-Para quem é fã acredito que possa gostar, ainda estou aprendendo sobre APIs, mas por acaso acabei encontrando essa aqui e me desafiei a tentar criar algo, já que não encontrei nenhum video usando ela, e depois de quebrar tanto a cabeça foi isso que consegui até esse momento. Busquei alguns dados sobre as Cartas como: nome e as imagens, e organizei de maneira que você possa pesquisar a sua carta pelo nome ou usando uma das seleções.
+Para quem é fã acredito que possa gostar, ainda estou aprendendo sobre APIs, mas por acaso acabei encontrando essa aqui e me desafiei a tentar criar algo, já que não encontrei nenhum video usando ela, e depois de quebrar tanto a cabeça foi isso que consegui até esse momento. Busquei alguns dados sobre as Cartas como: nome e as imagens, e organizei de maneira que você possa pesquisar a sua carta pelo nome ou usando buscando na lista.
 Apanhei bastante para fazer esse projeto, que para mim, é mais uma grande conquista.
 
 ## Layout mobile
@@ -12,6 +12,8 @@ Apanhei bastante para fazer esse projeto, que para mim, é mais uma grande conqu
 
 ## Layout web
 ![Web 1](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/assets/readme/web-1.png)
+
+![Preview](https://github.com/renovatt/pokedex/blob/main/assets/readme/preview.gif)
 
 ## Front-end
 - HTML
@@ -29,7 +31,7 @@ Apanhei bastante para fazer esse projeto, que para mim, é mais uma grande conqu
 
 ![Web 3](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/assets/readme/web-3.png)
 
-- Você pode clicar em uma das seleções e escolher da sua maneira a carta desejada ou passar com a seta do teclado para cima ou para baixo.
+- Você pode clicar na seleção e escolher da sua maneira a carta desejada dentro da lista.
 
 ![Web 3](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/assets/readme/web-2.png)
 

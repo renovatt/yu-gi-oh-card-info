@@ -9,10 +9,10 @@
 
 body{
     overflow: hidden;
-    text-align: center;
+    background-position: center;
     background-size: cover;
-    background-repeat: repeat-y;
-    background-image: url(../img/back-g-yugi.jpg);
+    background-repeat: repeat;
+    background-image: url(../img/yu-gi-oh-background.png);
 }
 
 .overlay{
@@ -41,7 +41,7 @@ body{
     align-items: center;
     justify-content: space-between;
 
-    height: 100px;
+    height: 60px;
     border-bottom: 1px solid #000;
     padding: 0 50px;
     backdrop-filter: blur(3px);
@@ -50,77 +50,183 @@ body{
 
 .header img{
     width: 150px;
-    height: 100%;
-}
-
-.header .form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 12px;
-    font-weight: 600;
-    text-shadow: 2px 2px 10px #000;
-}
-
-.form label{
-    font-size: 14px;
-    margin: 5px;
-    color: #c53cc5; 
+    height: 250%;
 }
 
 .list-name-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-.select-list-name{
-    position: relative;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+
+    margin-right: 162px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 15px;
+    height: 40px;
+    width: 250px;
+    color: #c53cc5;
+    background: #000003cb;
+}
+
+.list-name-content span{
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+.list-name-content img{
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+}
+
+.easter-egg-content{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+
+.easter-egg-content span{
+    cursor: pointer;
+    display: flex;
     justify-content: center;
-    
-    font-size: 12px;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+}
+
+.easter-egg-content span img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 1px 15px #000;
+    transform: rotate(18deg);
+    transition: ease .3s;
+}
+
+.easter-egg-content span img:hover{
+    box-shadow: 0px 1px 15px #ffd900;
+    transform: rotate(380deg);
+}
+
+.list-select-name{
+    display: none;
+    margin-top: 41px;
+    position: absolute;
+    right: 180px;
+    top: 60px;
+    height: 480px;
+    width: 350px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 25px #000;
+    box-shadow: 2px 2px 8px #000;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(20, 10, 17, 0) 100%);
+    transition: ease .3s;
+}
+
+.list-beast-name{
+    overflow: hidden;
+    display: none;
+    margin-top: 41px;
+    position: absolute;
+    right: 180px;
+    top: 60px;
+    height: 180px;
+    width: 350px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 25px #000;
+    box-shadow: 2px 2px 8px #000;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(20, 10, 17, 0) 100%);
+    transition: ease .3s;
+}
+
+.list-name{
+    overflow-y: scroll;
+    cursor: pointer;
+    display: block;
+
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
 
-    outline: none;
-    padding: 0;
-    height: 35px;
+    height: 479px;
     width: 100%;
     border-radius: 15px;
     color: #cdc9c9;
-    background-color: #000;
-   
+    list-style: none;
+}
+
+.list-beast{
+    cursor: pointer;
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    width: 100%;
+    border-radius: 15px;
+    color: #cdc9c9;
+    list-style: none;
+}
+
+.list-name::-webkit-scrollbar {
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+  }
+  
+.list-name::-webkit-scrollbar-thumb {
+    /*background: #525861;*/
+    background: #c53cc5;
+    height: 60px;
+    border-radius: 0 8px 8px 0;
+  }
+
+.list-name li{
+    padding: 8px;
+}
+
+.list-name li:hover{
+    color: #fff;
+    background-color: #c53cc5;
+}
+
+.list-beast li{
+    padding: 8px;
+}
+
+.list-beast li:hover{
+    color: #fff;
+    background-color: #c53cc5;
 }
 
 .container{
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-around;
-    width: 100%; 
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .main-content{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    order: -1;
     
-    margin: 20px;
+    margin: 40px 0;
     height: 480px;
-    width: 550px;
+    width: 500px;
     padding: 20px;
     border-radius: 15px;
     border: 1px solid #000;
     box-shadow: 2px 2px 25px #000;
     box-shadow: 2px 2px 8px #000;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(2px);
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(20,10,17,0) 100%);
 }
 
@@ -174,14 +280,13 @@ body{
     font-size: 14px;
     font-weight: 600;
     border:1px solid #000;
-    color: #000;
+    color: #cdc9c9;
     background: linear-gradient(90deg, rgba(255,19,194,1) 0%, rgba(20,10,18,1) 100%);
-    transition:  .3s;
+    transition: ease .3s;
 }
 
 .btn-submit:hover{
     color: #fff;
-    border:1px solid #fff;
 }
 
 .buttons{
@@ -197,9 +302,8 @@ body{
 
     outline: none;
     cursor: pointer;
-    outline: none;
     padding: 10px;
-    width: 150px;
+    width: 130px;
     height: 40px;
     margin: 10px;
     border-radius: 15px;
@@ -207,17 +311,16 @@ body{
     font-size: 14px;
     font-weight: 600;
     border:1px solid #000;
-    color: #000;
+    color: #cdc9c9;
     background: linear-gradient(90deg, rgba(255,19,194,1) 0%, rgba(20,10,18,1) 100%);
     transition:  .3s;
 }
 
 .btn:hover{
     color: #fff;
-    border:1px solid #fff;
 }
 
-.img_preview{
+.img-preview{
     position: relative;
     max-width: 300px;
     height:430px;
@@ -226,17 +329,20 @@ body{
     background-image: url(../img/cardback.jpg);
 }
 
-.img_preview img{
+.img-preview img{
     object-fit: cover;
     width: 100%;
     height: 100%;
     min-width: 300px;
     border: 1px solid #000;
-    box-shadow: 2px 2px 35px #000;
     box-shadow: 2px 2px 55px #000;
 }
 
 .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     position: absolute;
     z-index: -1;
     bottom: 0;
@@ -245,26 +351,33 @@ body{
     color: #fff;
     background: #000;
     padding: 5px 15px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .footer a{
-    text-decoration: none;
     color:#fff;
+    text-decoration: none;
     transition: all 0.7s ease 0s;
 }
 
 .footer a:hover{
-    color: #c53cc5;  
-    transition: all 0.7s ease 0s;
+    color: #c53cc5;
 }
 
 /*Media query*/
 
-@media screen and (max-width: 872px){
+@media screen and (max-width: 1115px){
+
+    .list-name-content{
+        margin-right: 20px;
+    }
+
+    .list-select-name, .list-beast-name{
+        max-width: 350px;
+        right: 23px;
+    }
+}
+
+@media screen and (max-width: 912px){
     body{
         margin: 0;
         display: flex;
@@ -288,36 +401,37 @@ body{
 
     .header{
         width: 100%;
-        height: 100px;
         padding: 0 10px;
-        margin-bottom: 260px;
-    }
-    
-    .header .form{
-        display: flex;
-        justify-content: start;
-        align-items: center;
-    }
-
-    .form label{
-        color: #ffd900;
+        margin-bottom: 10px;
     }
 
     .list-name-content{
-        display: flex;
-        align-items: center;
-    }  
+        width: 120px;
+        margin-right: 60px;
+    }
+
+    .list-name-content span{
+        padding: 3px;
+        font-size: 14px;
+        color: #ffd900;
+    }
+
+    .list-select-name, .list-beast-name{
+        max-width: 350px;
+        right: 13px;
+        background-color: #0d141fb9;
+    }
 
     .container{
         display: flex;
         flex-direction: column;
-
-        margin: 0;
+        margin-top: 220px;
         padding: 0;
         height: 100vh;
     }
 
     .main-content{
+        order: 0;
         width: 100%;
         max-width: 350px;
         height: 100vh;
@@ -343,20 +457,20 @@ body{
         margin: 10px 0;
     }
 
-    .buttons{
+    .buttons .btn{
         width: 100%;
-        left: 0;
+        margin: 0 3px;
     }
 
     .buttons .btn, .btn-submit{
         background: linear-gradient(138deg, rgba(255,217,0,1) 0%, rgba(27,27,27,1) 100%);
     }
 
-    .img_preview{
+    .img-preview{
         position: relative;
-        margin: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
         max-width: 330px;
-        margin-bottom: 40px;
     }
     
     .footer{

@@ -22,7 +22,7 @@
         </section>
 
         <section class="easter-egg-content">
-            <span onclick="easterList()"><img src="assets/img/easter-egg.png"></span>
+            <span id="easter-egg" onclick="easterList()"><img src="assets/img/easter-egg.png"></span>
         </section>
         
         <!--------------Listas normalmente ocultas------------------->
@@ -37,7 +37,7 @@
         
     </header>
     
-    <main class="container" onclick="closeLists()">
+    <main id="container" class="container" onclick="closeLists()">
 
         <figure class="img-preview" id="preview">
             <img id="img-preview">
@@ -74,6 +74,10 @@
             </div>
         </footer>
     </main>
+
+    <section id="controls" class="controls">
+            <span id="pause" class="pause"><img src="assets/img/pause.png"></span>     
+    </section>
 
     <script src="assets/javascript/main.js"></script>
     <script src="assets/javascript/vanila.js"></script>

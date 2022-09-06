@@ -201,6 +201,7 @@ function soundFlip() {
     setTimeout(sound, 500)
     function sound() {
         flip_sound.play()
+        flip_sound.volume = 0.5
     }
 }
 

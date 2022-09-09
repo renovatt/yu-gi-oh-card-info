@@ -262,6 +262,7 @@ html{
 
 .info-data div .description-content{
     position: absolute;
+    z-index: 33;
     display: none;
     justify-content: center;
     align-items: center;
@@ -536,7 +537,7 @@ html{
     .info-data div .description-content{
         top: -15px;
         right: -15px;
-        width: 230px;
+        width: 280px;
         height: auto;
     }
 

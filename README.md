@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-https://renovatt.github.io/yu-gi-oh-card-info/
+https://yu-gi-oh-card-info.vercel.app/
 
 Para quem é fã acredito que possa gostar, ainda estou aprendendo sobre consumo de APIs, mas por acaso acabei encontrando essa aqui e me desafiei a tentar criar algo bem simples, já que não encontrei nenhum video usando ela, e depois de quebrar tanto a cabeça foi isso que consegui até esse momento. Busquei alguns dados sobre as Cartas como: nome e as imagens, e organizei de maneira que você possa pesquisar a sua carta pelo nome correto ou usando buscando na lista.
 Apanhei bastante para fazer esse projeto, que para mim, é a minha primeira grande conquista.
@@ -25,6 +25,7 @@ Apanhei bastante para fazer esse projeto, que para mim, é a minha primeira gran
 
 ## Implantação em produção
 - Front-end web: GitHub
+- Front-end web: Vercel
 
 ## Como usar
 - Você pode pesquisar digitando o nome da carta (Nome real, Correto de tradução)

@@ -13,7 +13,7 @@ Apanhei bastante para fazer esse projeto, que para mim, é a minha primeira gran
 ## Layout web
 ![Web 1](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/src/assets/readme/web-1.png)
 
-![Preview](https://github.com/renovatt/pokedex/blob/main/src/assets/readme/preview.gif)
+![Preview](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/src/assets/readme/preview.gif)
 
 ## Front-end
 - HTML

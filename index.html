@@ -1,69 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wildemberg Renovato, @renovatt">
+    <meta name="description" content="Galeria de todas as cartas de Yu-Gi-Oh, Yu-Gi-Oh cards">
+    <meta name="keywords" content="Yu-Gi-Oh, Cards, Game">
     <title>Yu-Gi-Oh | Info Cards</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/icone/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="shortcut icon" href="src/assets/icone/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div id="overlay" class="overlay">
-        <div id="load" class="load"></div>
+    <div class="overlay">
+        <div class="load"></div>
     </div>
 
-    <header class="header">   
+    <header class="header">
         
-        <img src="assets/img/Yu-Gi-Oh-logo.png">
+        <img class="logo" src="src/assets/img/Yu-Gi-Oh-logo.png" alt="logo">
         
-        <section class="list-name-content" onclick="openList()">
-            <span>List of Cards</span><img src="assets/img/arrow.png">
+        <section class="open-list-cards">
+            <span>Lista de Cartas</span><img src="src/assets/img/arrow.png" alt="arrow-icone">
         </section>
 
         <section class="easter-egg-content">
-            <span id="easter-egg" onclick="easterList()"><img src="assets/img/easter-egg.png"></span>
+            <span class="easter-egg"><img src="src/assets/img/easter-egg.png" alt="easter-egg-icone"></span>
         </section>
         
         <!--------------Listas normalmente ocultas------------------->
-        <section class="list-select-name" id="list-select-name">
-            <ul id="list-of-names" class="list-name"></ul>
+        <section class="list-select-card">
+            <ul class="list-of-name"></ul>
         </section>
 
-        <section class="list-beast-name" id="list-select-divine">
-            <ul id="divine-beast" class="list-beast"></ul>
+        <section class="list-beast-name">
+            <ul class="beast-name"></ul>
         </section>
         <!----------------------------------------------------------->
         
     </header>
     
-    <main id="container" class="container" onclick="closeLists()">
+    <main class="container">
 
-        <figure class="img-preview" id="preview">
-            <img id="img-preview">
+        <figure class="all-preview">
+            <img id="card-preview" alt="back-card">
         </figure>
 
         <article class="main-content">
                 <section class="info-data">
-                    <div>Name: <span id="card-name"></span></div>
-                    <div>Type: <span id="type"></span></div>
+                    <img class="close-desc" src="src/assets/img/close.png" alt="close-button">
+                    <div><span id="description-content" class="description-content"></span></div>
+                    <div>Nome: <span id="card-name"></span></div>
+                    <div>Tipo: <span id="type"></span></div>
                     <div>ID: <span id="id"></span></div>
-                    <div>Level: <span id="level"></dspaniv></div>
-                    <div>Card Set: <span id="card-set"></span></div>
-                    <div>Race: <span id="race"></span></div>
-                    <div>Position: <span id="position"></span></div>
-                    <div>Total of Cards: <span id="total-cards"></span></div>
+                    <div>Nível: <span id="level"></dspaniv></div>
+                    <div>Conjunto: <span id="card-set"></span></div>
+                    <div>Espécie: <span id="race"></span></div>
+                    <div>Posição: <span id="position"></span></div>
+                    <div>Descrição: <img  class="description" src="src/assets/img/desc-info.png" alt="description-icon"></div>
+                    <div>Total de Cartas: <span id="total-cards"></span></div>
                 </section>
 
                     <section>
-                        <input id="input" class="input" type="search" placeholder="Search your card: Dark Magician" spellcheck="false">
-                        <button onclick="btnSubmit()" class="btn-submit"
-                        >Click</button>
+                        <input id="input" class="input" type="search" placeholder="Procure sua carta: Mago Negro" spellcheck="false">
+                        <button class="btn-submit"
+                        >Buscar</button>
                     </section>
                
                     <section class="buttons">
-                        <button class="btn" onclick="btnPrev()">Back</button>
-                        <button class="btn" onclick="btnNext()">Next</button>
+                        <button class="btn btnPrev">Voltar</button>
+                        <button class="btn btnNext">Próximo</button>
                     </section>
         </article>
         
@@ -75,14 +81,14 @@
         </footer>
     </main>
 
-    <section id="controls" class="controls">
-            <span id="pause" class="pause"><img src="assets/img/pause.png"></span>     
+    <section class="controls">
+            <span class="pause"><img src="src/assets/img/pause.png" alt="pause-icone"></span>     
     </section>
 
-    <script src="assets/javascript/main.js"></script>
-    <script src="assets/javascript/vanila.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script src="./src/vanila.js"></script>
     <script>
-        VanillaTilt.init(document.querySelectorAll("#img-preview"), {
+        VanillaTilt.init(document.querySelectorAll("#card-preview"), {
             max: 25,
         })
     </script>

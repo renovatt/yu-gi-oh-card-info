@@ -146,18 +146,12 @@ pause.addEventListener('click', () => {
 openListCards.addEventListener('click', (event) => {
     catchNames(event)
     list_select_card.style.display = 'flex'
-    list_divine_beast.style.display = 'none'
-    description_content.style.display = 'none'
-    close_desc.style.display = 'none'
     preview.style.visibility = 'hidden'
 })
 
 easter_egg.addEventListener('click', (event) => {
     catchNames(event)
     list_divine_beast.style.display = 'flex'
-    list_select_card.style.display = 'none'
-    description_content.style.display = 'none'
-    close_desc.style.display = 'none'
     preview.style.visibility = 'hidden'
 })
 

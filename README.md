@@ -29,6 +29,7 @@ Apanhei bastante para fazer esse projeto, que para mim, é a minha primeira gran
 
 ## Como usar
 - Você pode pesquisar digitando o nome da carta (Nome real, Correto de tradução)
+- Uma lista vai aparecer de acordo com os nomes que você for digitando facilitando a sua busca.
 
 ![Web 3](https://github.com/renovatt/yu-gi-oh-card-info/blob/main/src/assets/readme/web-3.png)
 

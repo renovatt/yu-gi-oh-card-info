@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Yusei Magic', sans-serif;
 }
 
-body{
+body {
     overflow: hidden;
     background-position: center;
     background-size: cover;
@@ -15,11 +15,11 @@ body{
     background-image: url(../assets/img/yu-gi-oh-background.png);
 }
 
-html{
+html {
     -webkit-tap-highlight-color: transparent;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -31,7 +31,7 @@ html{
     background: #000;
 }
 
-.load{
+.load {
     width: 500px;
     height: 100%;
     margin-top: 260px;
@@ -41,7 +41,45 @@ html{
     background-image: url(../assets/icone/android-chrome-512x512.png);
 }
 
-.header{
+.alert {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 88;
+    top: 130px;
+    left: 100px;
+    width: 300px;
+    height: 150px;
+    border-radius: 25px;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.alert .btn-alert {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .3s;
+    background-color: #cdc9c9;
+}
+
+.alert .btn-alert:hover {
+    color: #fff;
+    background-color: #c53cc5
+}
+
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,15 +88,15 @@ html{
     border-bottom: 1px solid #000;
     padding: 0 50px;
     backdrop-filter: blur(3px);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(20,10,17,0) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 17, 0) 100%);
 }
 
-.header .logo{
+.header .logo {
     width: 150px;
     height: 250%;
 }
 
-.open-list-cards{
+.open-list-cards {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -74,25 +112,25 @@ html{
     background: #000003cb;
 }
 
-.open-list-cards span{
+.open-list-cards span {
     cursor: pointer;
     display: block;
     text-align: center;
 }
 
-.open-list-cards img{
+.open-list-cards img {
     width: 20px;
     height: 20px;
     transform: rotate(180deg);
 }
 
-.easter-egg-content{
+.easter-egg-content {
     position: absolute;
     top: 12px;
     right: 15px;
 }
 
-.easter-egg-content span{
+.easter-egg-content span {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -101,7 +139,7 @@ html{
     height: 35px;
 }
 
-.easter-egg-content span img{
+.easter-egg-content span img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -110,12 +148,12 @@ html{
     transition: ease .3s;
 }
 
-.easter-egg-content span img:hover{
+.easter-egg-content span img:hover {
     box-shadow: 0px 1px 15px #ffd900;
     transform: rotate(380deg);
 }
 
-.list-select-card{
+.list-select-card {
     display: none;
     margin-top: 41px;
     position: absolute;
@@ -130,7 +168,22 @@ html{
     background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(20, 10, 17, 0) 100%);
 }
 
-.list-beast-name{
+.list-select-input {
+    display: none;
+    margin-top: 41px;
+    position: absolute;
+    right: 180px;
+    top: 60px;
+    height: 480px;
+    width: 350px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 25px #000;
+    box-shadow: 2px 2px 8px #000;
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(20, 10, 17, 0) 100%);
+}
+
+.list-beast-name {
     overflow: hidden;
     display: none;
     margin-top: 41px;
@@ -146,7 +199,7 @@ html{
     background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(20, 10, 17, 0) 100%);
 }
 
-.list-of-name{
+.list-of-name {
     overflow-y: scroll;
     cursor: pointer;
     display: block;
@@ -162,7 +215,23 @@ html{
     list-style: none;
 }
 
-.beast-name{
+.list-of-input {
+    overflow-y: scroll;
+    cursor: pointer;
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    height: 479px;
+    width: 100%;
+    border-radius: 15px;
+    color: #cdc9c9;
+    list-style: none;
+}
+
+.beast-name {
     cursor: pointer;
     display: block;
 
@@ -180,33 +249,54 @@ html{
     width: 8px;
     background: #0d141f;
     border-radius: 0 8px 8px 0;
-  }
-  
+}
+
 .list-of-name::-webkit-scrollbar-thumb {
     background: #c53cc5;
     height: 60px;
     border-radius: 0 8px 8px 0;
-  }
+}
 
-.list-of-name li{
+.list-of-input::-webkit-scrollbar {
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+
+.list-of-input::-webkit-scrollbar-thumb {
+    background: #c53cc5;
+    height: 60px;
+    border-radius: 0 8px 8px 0;
+}
+
+.list-of-name li {
     padding: 8px;
 }
 
-.list-of-name li:hover{
+.list-of-name li:hover {
     color: #fff;
     background-color: #c53cc5;
 }
 
-.beast-name li{
+.list-of-input li {
     padding: 8px;
 }
 
-.beast-name li:hover{
+.list-of-input li:hover {
     color: #fff;
     background-color: #c53cc5;
 }
 
-.container{
+.beast-name li {
+    padding: 8px;
+}
+
+.beast-name li:hover {
+    color: #fff;
+    background-color: #c53cc5;
+}
+
+.container {
     display: flex;
     align-items: center;
     align-content: center;
@@ -214,12 +304,12 @@ html{
     width: 100%;
 }
 
-.main-content{
+.main-content {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     order: -1;
-    
+
     margin: 40px 0;
     height: 480px;
     width: 500px;
@@ -229,10 +319,10 @@ html{
     box-shadow: 2px 2px 25px #000;
     box-shadow: 2px 2px 8px #000;
     backdrop-filter: blur(2px);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(20,10,17,0) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 17, 0) 100%);
 }
 
-.info-data{
+.info-data {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -240,7 +330,7 @@ html{
     align-content: center;
 }
 
-.info-data div{
+.info-data div {
     padding: 5px;
     font-size: 14px;
     font-weight: 600;
@@ -248,11 +338,11 @@ html{
     text-shadow: 2px 2px 8px #000;
 }
 
-.info-data div span{
+.info-data div span {
     color: #cdc9c9;
 }
 
-.info-data div img{
+.info-data div img {
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -260,7 +350,7 @@ html{
     position: absolute;
 }
 
-.info-data div .description-content{
+.info-data div .description-content {
     position: absolute;
     z-index: 33;
     display: none;
@@ -280,7 +370,7 @@ html{
     background-color: #111111ee;
 }
 
-.info-data .close-desc{
+.info-data .close-desc {
     display: none;
     cursor: pointer;
     position: absolute;
@@ -293,7 +383,7 @@ html{
     border-radius: 50%;
 }
 
-.input{
+.input {
     outline: none;
     text-align: center;
     font-weight: 600;
@@ -306,7 +396,7 @@ html{
     border-radius: 15px;
 }
 
-.btn-submit{
+.btn-submit {
     cursor: pointer;
     outline: none;
     display: flex;
@@ -323,22 +413,22 @@ html{
 
     font-size: 14px;
     font-weight: 600;
-    border:1px solid #000;
+    border: 1px solid #000;
     color: #cdc9c9;
-    background: linear-gradient(90deg, rgba(255, 19, 194, 1)  0%, rgba(20,10,18,1) 100%);
+    background: linear-gradient(90deg, rgba(255, 19, 194, 1) 0%, rgba(20, 10, 18, 1) 100%);
     transition: ease .3s;
 }
 
-.btn-submit:hover{
+.btn-submit:hover {
     color: #fff;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: start;
 }
 
-.buttons .btn{
+.buttons .btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -353,26 +443,26 @@ html{
 
     font-size: 14px;
     font-weight: 600;
-    border:1px solid #000;
+    border: 1px solid #000;
     color: #cdc9c9;
-    background: linear-gradient(90deg, rgba(255,19,194,1) 0%, rgba(20,10,18,1) 100%);
-    transition:  .3s;
+    background: linear-gradient(90deg, rgba(255, 19, 194, 1) 0%, rgba(20, 10, 18, 1) 100%);
+    transition: .3s;
 }
 
-.btn:hover{
+.btn:hover {
     color: #fff;
 }
 
-.all-preview{
+.all-preview {
     position: relative;
     max-width: 300px;
-    height:430px;
+    height: 430px;
     background-size: cover;
     background-position: center;
     background-image: url(../assets/img/cardback.jpg);
 }
 
-.all-preview img{
+.all-preview img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -381,7 +471,7 @@ html{
     box-shadow: 2px 2px 55px #000;
 }
 
-.controls span{
+.controls span {
     cursor: pointer;
     position: absolute;
     width: 40px;
@@ -396,11 +486,11 @@ html{
     height: 100%;
 }
 
-.pause{
+.pause {
     display: none;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -415,29 +505,31 @@ html{
     padding: 5px 15px;
 }
 
-.footer a{
-    color:#fff;
+.footer a {
+    color: #fff;
     text-decoration: none;
     transition: all 0.7s ease 0s;
 }
 
-.footer a:hover{
+.footer a:hover {
     color: #c53cc5;
 }
 
 /*Media query*/
 
-@media screen and (max-width: 1115px){
+@media screen and (max-width: 1115px) {
 
     .load {
         background-repeat: no-repeat;
     }
 
-    .list-of-name-content{
+    .list-of-name-content {
         margin-right: 20px;
     }
 
-    .list-select-card, .list-beast-name{
+    .list-select-card,
+    .list-select-input,
+    .list-beast-name {
         max-width: 350px;
         right: 23px;
     }
@@ -448,17 +540,17 @@ html{
     }
 }
 
-@media screen and (max-width: 912px){
-    body{
+@media screen and (max-width: 912px) {
+    body {
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        overflow:visible ;
+        overflow: visible;
 
         background-position: center;
-        background-repeat:repeat-y;
+        background-repeat: repeat-y;
         background-image: url(../assets/img/load-2.jpg);
     }
 
@@ -467,8 +559,8 @@ html{
         width: 100%;
         height: 100vh;
     }
-    
-    .load{
+
+    .load {
         width: 100%;
         height: 400px;
         margin-top: -50px;
@@ -476,34 +568,59 @@ html{
         background-position: center;
     }
 
-    .header{
+    .alert {
+        left: 5px;
+    }
+
+    .alert .btn-alert:hover {
+        color: #fff;
+        background-color: #ffd900
+    }
+
+    .header {
         width: 100%;
         padding: 0 10px;
         margin-bottom: 10px;
     }
 
-    .open-list-cards{
+    .open-list-cards {
         width: 120px;
         margin-right: 60px;
     }
 
-    .open-list-cards span{
+    .open-list-cards span {
         padding: 3px;
         font-size: 14px;
         color: #ffd900;
+    }
+
+    .list-of-name li:hover {
+        color: #000;
+        background-color: #ffd900;
+    }
+
+    .list-of-input li:hover {
+        color: #000;
+        background-color: #ffd900;
     }
 
     .list-of-name::-webkit-scrollbar-thumb {
         background: #ffd900;
     }
 
-    .list-select-card, .list-beast-name{
+    .list-of-input::-webkit-scrollbar-thumb {
+        background: #ffd900;
+    }
+
+    .list-select-card,
+    .list-select-input,
+    .list-beast-name {
         max-width: 350px;
         right: 13px;
         background-color: #0d141fb9;
     }
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         margin-top: 220px;
@@ -511,7 +628,7 @@ html{
         height: 100vh;
     }
 
-    .main-content{
+    .main-content {
         order: 0;
         width: 100%;
         max-width: 350px;
@@ -519,22 +636,22 @@ html{
         margin: 0;
         margin-top: 40px;
         margin-bottom: 40px;
-        backdrop-filter: none; 
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 0%, rgba(20,10,17,0) 100%);
+        backdrop-filter: none;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(20, 10, 17, 0) 100%);
     }
 
-    .info-data{
+    .info-data {
         font-size: 14px;
         position: relative;
     }
 
-    .info-data div{
+    .info-data div {
         padding: 5px;
         text-align: start;
         color: #ffd900;
     }
 
-    .info-data div .description-content{
+    .info-data div .description-content {
         top: -15px;
         right: -15px;
         width: 280px;
@@ -547,21 +664,23 @@ html{
         right: -30px;
     }
 
-    .input, .btn-submit{
+    .input,
+    .btn-submit {
         width: 100%;
         margin: 10px 0;
     }
 
-    .buttons .btn{
+    .buttons .btn {
         width: 100%;
         margin: 0 3px;
     }
 
-    .buttons .btn, .btn-submit{
-        background: linear-gradient(138deg, rgba(255,217,0,1) 0%, rgba(27,27,27,1) 100%);
+    .buttons .btn,
+    .btn-submit {
+        background: linear-gradient(138deg, rgba(255, 217, 0, 1) 0%, rgba(27, 27, 27, 1) 100%);
     }
 
-    .all-preview{
+    .all-preview {
         margin-top: 20px;
         margin-bottom: 20px;
         max-width: 330px;
@@ -572,22 +691,22 @@ html{
         bottom: 50px;
     }
 
-    .footer{
+    .footer {
         position: relative;
         width: 100%;
     }
 
-    .footer a:hover{
+    .footer a:hover {
         color: #ffd900;
     }
 }
 
- @keyframes spin {
-     from {
+@keyframes spin {
+    from {
         transform: rotate(0deg);
-     }
+    }
 
-     to {
+    to {
         transform: rotate(360deg);
-     }
+    }
 }

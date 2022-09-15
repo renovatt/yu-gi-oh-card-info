@@ -2,12 +2,12 @@ import { fetchYuGiOh, fetchDivineBeast } from './modules/fetch.js'
 import { flip_sound, easter_sound, theme_sound } from './modules/audio.js'
 import { name_card, type, id, level, race, card_set } from './modules/const.js'
 import { position, description_content, total_cards, img_preview } from './modules/const.js'
-import { btnPrev, btnNext, openListCards, btnSubmit, list_of_names } from './modules/const.js'
-import { beast_name, list_select_card, list_divine_beast } from './modules/const.js'
-import { preview, easter_egg, container, description, close_desc, pause } from './modules/const.js'
+import { btnPrev, btnNext, openListCards, btnSubmit, list_of_names, input_list, input } from './modules/const.js'
+import { beast_name, list_select_card, list_select_input, list_divine_beast } from './modules/const.js'
+import { preview, easter_egg, container, description, close_desc, pause, btn_alert } from './modules/const.js'
 
 
-let card_indice = 7569
+let card_indice = 7603
 let new_input_value
 let new_indice_value
 
@@ -81,6 +81,16 @@ const nameList = async () => {
 
 nameList()
 
+const nameInputList = async () => {
+    const response = await fetchYuGiOh()
+    const cardList = response.data
+    const listName = cardList.map((item, key) =>
+    `<li data-id="${key}">${item.name}</li>`)
+    input_list.innerHTML = listName.join('')
+}
+
+nameInputList()
+
 const easterEgg = async () => {
     const response = await fetchDivineBeast()
     const cardList = response.data
@@ -94,6 +104,7 @@ easterEgg()
 function catchNames(event) {
     new_input_value = event.target.textContent
     list_select_card.style.display = 'none'
+    list_select_input.style.display = 'none'
     list_divine_beast.style.display = 'none'
     description_content.style.display = 'none'
     close_desc.style.display = 'none'
@@ -107,6 +118,11 @@ function soundFlip() {
         flip_sound.play()
         flip_sound.volume = 0.1
     }
+}
+
+function validation() {
+    const alert = document.querySelector('.alert')
+    alert.style.display = 'flex'
 }
 
 window.addEventListener('load', () => {
@@ -151,6 +167,13 @@ list_of_names.addEventListener('click', (event) => {
     soundFlip()
 })
 
+input_list.addEventListener('click', (event) => {
+    new_indice_value = +event.target.dataset.id + 1
+    catchNames(event)
+    soundFlip()
+    input.value = ''
+})
+
 beast_name.addEventListener('click', (event) => {
     new_indice_value = +event.target.dataset.id + 1
     catchNames(event)
@@ -164,11 +187,15 @@ container.addEventListener('click', () => {
 })
 
 btnSubmit.addEventListener('click', () => {
-    const input = document.getElementById('input')
+    const input = document.querySelector('.input')
     new_input_value = input.value.replace(/( )+/g, ' ').trim()
     input.value = ''
-    nameRender()
-    soundFlip()
+    if (new_input_value == '') {
+        validation()
+    } else {
+        nameRender()
+        soundFlip()
+    }
 })
 
 btnNext.addEventListener('click', () => {
@@ -195,4 +222,23 @@ description.addEventListener('mouseover', () => {
 close_desc.addEventListener('click', () => {
     description_content.style.display = 'none'
     close_desc.style.display = 'none'
+})
+
+btn_alert.addEventListener('click', () => {
+    const alert = document.querySelector('.alert')
+    alert.style.display = 'none'
+})
+
+input.addEventListener('keyup', async () => {
+    const response = await fetchYuGiOh()
+    const cardList = response.data
+    let my_input_value = input.value.replace(/( )+/g, ' ').trim()
+    new_input_value = my_input_value.toLowerCase()
+    const search = cardList.filter(item => item.name.toLowerCase().includes(new_input_value))
+    const result = search.map((item, key) => `<li data-id="${key}">${item.name}</li>`)
+    input_list.innerHTML = result.join('')
+    preview.style.visibility = 'hidden'
+    description_content.style.display = 'none'
+    close_desc.style.display = 'none'
+    list_select_input.style.display = 'flex'
 })

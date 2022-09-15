@@ -33,6 +33,10 @@
             <ul class="list-of-name"></ul>
         </section>
 
+        <section class="list-select-input">
+            <ul class="list-of-input"></ul>
+        </section>
+
         <section class="list-beast-name">
             <ul class="beast-name"></ul>
         </section>
@@ -48,6 +52,11 @@
 
         <article class="main-content">
                 <section class="info-data">
+                    <section class="alert">
+                        <p>Digite um nome válido!</p>
+                        <button class="btn-alert">Ok</button>
+                    </section>
+                    
                     <img class="close-desc" src="src/assets/img/close.png" alt="close-button">
                     <div><span id="description-content" class="description-content"></span></div>
                     <div>Nome: <span id="card-name"></span></div>
@@ -62,7 +71,7 @@
                 </section>
 
                     <section>
-                        <input id="input" class="input" type="search" placeholder="Procure sua carta: Mago Negro" spellcheck="false">
+                        <input class="input" type="search" placeholder="Procure sua carta: Mago Negro" spellcheck="false">
                         <button class="btn-submit"
                         >Buscar</button>
                     </section>

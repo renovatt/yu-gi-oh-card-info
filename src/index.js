@@ -7,7 +7,7 @@ import { beast_name, list_select_card, list_select_input, list_divine_beast } fr
 import { preview, easter_egg, container, description, close_desc, pause, btn_alert } from './modules/const.js'
 
 
-let card_indice = 7603
+let card_indice = 7651
 let new_input_value
 let new_indice_value
 
